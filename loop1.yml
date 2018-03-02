@@ -1,0 +1,10 @@
+---
+
+ - name: loops
+   yum: name={{item}} state=present
+   with_items:
+       - git
+       - ntp
+       - docker
+   when: ansible_os_family=='RedHat'
+

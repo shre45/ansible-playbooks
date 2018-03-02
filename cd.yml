@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   become: yes
+   tasks: 
+    - name: change dir
+      command: > 
+        ls
+        chdir=/opt
+    - name: create
+      file:
+       path: /opt/1.txt
+       state: touch 

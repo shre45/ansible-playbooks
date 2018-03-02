@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   become: yes
+   tasks:
+   - include: 
+      loop.yml
+     tags:
+      - one
+   - include: 
+      loop1.yml
+     tags:
+      - two 

@@ -1,0 +1,15 @@
+---
+ - hosts: all
+   become: yes
+   vars_files:
+    - tomcat-var.yml
+   tasks:
+    - name: install tomcat
+      yum:
+        name: tomcat8
+        state: present
+    - name: restart
+      service:
+        name: tomcat8
+        state: started
+        enabled: yes 

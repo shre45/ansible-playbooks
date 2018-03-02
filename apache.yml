@@ -1,0 +1,15 @@
+---
+
+ - hosts: all
+   become: true
+   vars_files:
+    - vars.yml
+   tasks:
+    - name: install apache server
+      yum: name=httpd state=present
+    - name: start and enable apache server
+      service: name=httpd state=started enabled=yes
+    - name: deploy
+      git:
+        repo: "{{git_url}}"
+        dest: "{{deploy_path}}"

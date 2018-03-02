@@ -1,0 +1,9 @@
+---
+ - hosts: all
+   become: yes
+   serial: 1
+   tasks:
+    - name: copy dir
+      file:
+       path: /home/ubuntu/copy
+       state: directory

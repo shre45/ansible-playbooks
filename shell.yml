@@ -1,0 +1,7 @@
+---
+ - hosts: all
+   become: yes
+   tasks: 
+    - name: shell
+      shell: >
+        mv /opt/1.txt /home/ubuntu/

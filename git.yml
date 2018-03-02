@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   become: yes
+   tasks: 
+    - name: welcome to git
+      git:
+       repo: https://github.com/shre45/app.git
+       dest: /var/www/html
+    - name: restrat apache
+      service: 
+       name: httpd
+       state: restarted

@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   become: yes
+   tasks:
+    - name: copy
+      copy: 
+       src: /home/ubuntu/git.yml
+       dest: /home/ubuntu/
